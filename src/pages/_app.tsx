@@ -6,6 +6,7 @@ import theme from "../theme";
 
 import { AppProps } from "next/app";
 import { provider } from "web3-core";
+import Layout from "../components/layout/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   function getLibrary(provider: provider) {
@@ -15,7 +16,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <Web3ReactProvider getLibrary={getLibrary}>
       <ChakraProvider theme={theme}>
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ChakraProvider>
     </Web3ReactProvider>
   );

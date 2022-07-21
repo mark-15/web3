@@ -1,15 +1,28 @@
-import { useEffect } from "react";
-import Layout from "../../layout/Layout";
-
-import { useWeb3React } from "@web3-react/core";
-
 import { Converter } from "./Converter";
+import Image from "next/image";
+
+import { Flex, Heading } from "@chakra-ui/react";
 
 const Index = () => {
   return (
-    <Layout>
+    <>
+      <Flex
+        justifyContent="center"
+        alignItems="center"
+        height="45vh"
+        bgClip="text"
+      >
+        <Heading color="text" fontSize="6vw">
+          <Image
+            alt="Picture of the author"
+            width={300}
+            height={300}
+            src="/logo.png"
+          />
+        </Heading>
+      </Flex>
       <Converter />
-    </Layout>
+    </>
   );
 };
 
